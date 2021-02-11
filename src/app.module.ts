@@ -5,12 +5,13 @@ import { Lesson } from './lesson/lesson.entity';
 import { LessonModule } from './lesson/lesson.module';
 import { Students } from './students/students.entity';
 import { StudentsModule } from './students/students.module';
+import { db } from '../config/db.congig'
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type:'mongodb',
-      url:'mongodb+srv://TarasOne:IbpPPcvCA5cxbcwk@mon0ode.azmg2.mongodb.net/Lesson',
+      url:db.DB,
       synchronize:true,
       useUnifiedTopology:true,
       entities:[
